@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesyonel Adam Asmaca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="user-info">
+                <span id="level-badge">Seviye 1</span>
+                <div class="name-container">
+                    <input type="text" id="username-input" value="...">
+                    <button onclick="updateName()">💾</button>
+                </div>
+            </div>
+            <div class="lives">
+                Kalan Hak: <span id="lives-count">6</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="hangman-visual" id="hangman-visual">
+                <div class="gallows"></div>
+                <div class="head part" style="display:none"></div>
+                <div class="body part" style="display:none"></div>
+                <div class="arm-l part" style="display:none"></div>
+                <div class="arm-r part" style="display:none"></div>
+                <div class="leg-l part" style="display:none"></div>
+                <div class="leg-r part" style="display:none"></div>
+            </div>
+
+            <div class="word-display" id="word-display">
+                </div>
+
+            <div class="status-message" id="status-message"></div>
+
+            <div class="keyboard" id="keyboard">
+                </div>
+
+            <div class="controls" id="controls" style="display:none;">
+                <button id="next-level-btn" onclick="nextLevel()" class="btn btn-primary">Sonraki Seviye</button>
+                <button id="restart-btn" onclick="restartGame()" class="btn btn-danger">Baştan Başla</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
